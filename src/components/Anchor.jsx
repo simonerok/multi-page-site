@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import Anchor from "@/components/Anchor";
 
 export default function Anchor({ children, href, className }) {
   const router = useRouter();

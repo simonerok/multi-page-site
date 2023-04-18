@@ -14,8 +14,9 @@ export default function Dogs({ data }) {
   );
 }
 
+/* Makes a list of all the pages that is needed to be remebered by the server meaninng  */
 /* SERVER SITE BACKEND */
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   /* write dogs/some-slug then u see the page */
   const slug = context.params.slug;
   const api = "https://bucolic-bombolone-857476.netlify.app/api/dogs/" + slug;
@@ -29,15 +30,17 @@ export async function getServerSideProps(context) {
   console.log(data);
 
   return {
+    /*this makes sure we run the request only once */
     props: {
       data: data,
     },
   };
 }
 
+/* Generates one static page */
 /* CLIENT SITE BACKEND */
-export async function getStaticPatchs() {
-  const api = "https://bucolic-bombolone-857476.netlify.app/api/dogs/";
+export async function getStaticPaths() {
+  const api = "https://bucolic-bombolone-857476.netlify.app/api/dogs";
   const res = await fetch(api);
   const data = await res.json();
   /* generates a page for each "dog" */

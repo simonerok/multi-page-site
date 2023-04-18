@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Anchor from "@/components/Anchor";
 import Head from "next/head";
 
 export default function Home() {
@@ -7,7 +7,8 @@ export default function Home() {
       {/* Head ændre i urlens navn istedet for at der står localhost */}
       <Head>Welcome </Head>
       <h1>Hello</h1>
-      <Link href="/dogs/henry">Henry -nono</Link>
+      {/* anchor behaves like a link */}
+      <Anchor href="/dogs/henry">Henry -nono</Anchor>
     </>
   );
 }
