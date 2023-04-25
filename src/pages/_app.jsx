@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import Layout from "@/components/Layout";
 import App from "next/app";
 
+/* OBS this is a Next.js project */
 export default function MyApp({ Component, pageProps, navData }) {
   return (
     <>
